@@ -23,12 +23,12 @@ namespace RabbitMqReceive
                 var consumer = new EventingBasicConsumer(channel);
                 consumer.Received += (model, ea) =>
                 {
+                    
                     var body = ea.Body;
                     var message = Encoding.UTF8.GetString(body);
                     Console.WriteLine(" [x] {0}", message);
                 };
-                channel.BasicConsume(queue: queueName, noAck: true, consumer: consumer);
-
+                string basicConsume = channel.BasicConsume(queue: queueName, noAck: false, consumer: consumer);
                 Console.WriteLine(" Press [enter] to exit.");
                 Console.ReadLine();
             }

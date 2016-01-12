@@ -17,8 +17,9 @@ namespace RabbitMqReceive
 
             //WorkQueues();
 
-            ReceiveLogs.Run();
+            //ReceiveLogs.Run();
 
+            ReceiveLogsDirect.Run(new []{"info"});
         }
 
         private static void HelloWorld()

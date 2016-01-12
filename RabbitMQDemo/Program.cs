@@ -17,7 +17,9 @@ namespace RabbitMQSend
 
             //WorkQueues();
 
-            EmitLog.Run(args);
+            //EmitLog.Run(args);
+            
+            EmitLogDirect.Run(args);
         }
 
         private static void WorkQueues()
